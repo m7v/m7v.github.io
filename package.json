@@ -1,0 +1,33 @@
+{
+  "name": "andrew-mikhailov.github.io",
+  "version": "1.0.0",
+  "description": "My own homepage",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-mikhailov/andrew-mikhailov.github.io.git"
+  },
+  "keywords": [
+    "homepage",
+    "landing",
+    "github"
+  ],
+  "author": "andrew.mikhailov.18.01@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-mikhailov/andrew-mikhailov.github.io/issues"
+  },
+  "homepage": "https://andrew-mikhailov.github.io",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-image": "2.7.6",
+    "gulp-more-css": "^1.0.0",
+    "gulp-shorthand": "1.1.0",
+    "gulp-uncss": "1.0.6",
+    "gulp.spritesmith": "6.4.0"
+  }
+}

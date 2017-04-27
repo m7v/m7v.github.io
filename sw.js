@@ -3,12 +3,12 @@ self.addEventListener('install', (event) => {
     caches.open('homepage').then((cache) => {
       return cache.addAll([
         '/',
-        '/dist/img/background.jpg',
-        '/dist/img/sprite.png',
-        '/dist/fonts/Beleren2016-Bold.woff',
-        '/dist/css/main.css',
-        '/dist/video/background.mp4',
-        '/dist/video/background.webm'
+        '/img/background.jpg',
+        '/img/sprite.png',
+        '/fonts/Beleren2016-Bold.woff',
+        '/css/main.css',
+        '/video/background.mp4',
+        '/video/background.webm'
       ]);
     }).then(() => {
       return self.skipWaiting();

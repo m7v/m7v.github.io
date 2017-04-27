@@ -10,6 +10,9 @@ gulp.task('copy', function () {
   gulp.src('./src/video/background.mp4')
     .pipe(gulp.dest('./dist/video'));
 
+  gulp.src('./src/video/background.webm')
+    .pipe(gulp.dest('./dist/video'));
+
   gulp.src('./src/favicon.ico')
     .pipe(gulp.dest('./dist'));
 
@@ -58,7 +61,7 @@ gulp.task('cssShort', function() {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('sprite', () => {
+gulp.task('sprite', function() {
   const spriteData = gulp.src('src/img/*.png')
     .pipe(spritesmith({
       imgName: 'sprite.png',

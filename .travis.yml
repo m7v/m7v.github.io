@@ -10,7 +10,6 @@ deploy:
   local_dir: ./dist
   provider: pages
   skip_cleanup: true
-  target_branch: master
   github_token: $GITHUB_TOKEN
   on:
     branch: master

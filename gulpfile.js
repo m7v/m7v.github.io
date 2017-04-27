@@ -16,6 +16,9 @@ gulp.task('copy', function () {
   gulp.src('./src/index.html')
     .pipe(gulp.dest('./dist'));
 
+  gulp.src('./src/fonts/Beleren2016-Bold.woff')
+    .pipe(gulp.dest('./dist/fonts'));
+
   gulp.src('./src/manifest.json')
     .pipe(gulp.dest('./dist'));
 

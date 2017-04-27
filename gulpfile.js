@@ -6,6 +6,29 @@ const uncss = require('gulp-uncss');
 const cssShorthand = require('gulp-shorthand');
 const autoprefixer = require('gulp-autoprefixer');
 
+gulp.task('copy', function () {
+  gulp.src('./src/video/background.mp4')
+    .pipe(gulp.dest('./dist/video'));
+
+  gulp.src('./src/favicon.ico')
+    .pipe(gulp.dest('./dist'));
+
+  gulp.src('./src/index.hmtl')
+    .pipe(gulp.dest('./dist'));
+
+  gulp.src('./src/manifest.json')
+    .pipe(gulp.dest('./dist'));
+
+  gulp.src('./src/pwa_icon.png')
+    .pipe(gulp.dest('./dist'));
+
+  gulp.src('./src/README.md')
+    .pipe(gulp.dest('./dist'));
+
+  gulp.src('./src/sw.js')
+    .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('image', function () {
   gulp.src('src/img/*')
     .pipe(image({
@@ -25,7 +48,7 @@ gulp.task('image', function () {
 gulp.task('cssShort', function() {
   return gulp.src('./src/css/main.css')
     .pipe(uncss({
-      html: ['index.html']
+      html: ['./src/index.html']
     }))
     .pipe(cssShorthand())
     .pipe(cssMinify())
@@ -42,4 +65,4 @@ gulp.task('sprite', () => {
   return spriteData.pipe(gulp.dest('dist/img/'));
 });
 
-gulp.task('default', ['image', 'sprite', 'cssShort']);
+gulp.task('default', ['copy', 'image', 'sprite', 'cssShort']);

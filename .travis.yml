@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 7
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: develop

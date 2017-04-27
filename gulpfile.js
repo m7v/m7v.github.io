@@ -13,7 +13,7 @@ gulp.task('copy', function () {
   gulp.src('./src/favicon.ico')
     .pipe(gulp.dest('./dist'));
 
-  gulp.src('./src/index.hmtl')
+  gulp.src('./src/index.html')
     .pipe(gulp.dest('./dist'));
 
   gulp.src('./src/manifest.json')

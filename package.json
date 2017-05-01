@@ -5,7 +5,8 @@
   "main": "./dist/index.html",
   "scripts": {
     "build": "gulp",
-    "serve": "serve -s src"
+    "serve:dev": "serve -s src",
+    "serve": "serve -s dist"
   },
   "repository": {
     "type": "git",

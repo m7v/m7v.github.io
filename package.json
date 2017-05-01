@@ -4,7 +4,8 @@
   "description": "My own homepage",
   "main": "./dist/index.html",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "serve": "serve -s src"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "gulp-more-css": "^1.0.0",
     "gulp-shorthand": "1.1.0",
     "gulp-uncss": "1.0.6",
-    "gulp.spritesmith": "6.4.0"
+    "gulp.spritesmith": "6.4.0",
+    "serve": "^5.1.4"
   }
 }

@@ -36,7 +36,7 @@ gulp.task('copy', function () {
 });
 
 gulp.task('image', function () {
-  gulp.src('src/img/*')
+  gulp.src('src/image/*')
     .pipe(image({
       pngquant: true,
       optipng: false,
@@ -48,7 +48,7 @@ gulp.task('image', function () {
       svgo: true,
       concurrent: 10
     }))
-    .pipe(gulp.dest('./dist/img'));
+    .pipe(gulp.dest('./dist/image '));
 });
 
 gulp.task('cssShort', function() {

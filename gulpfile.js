@@ -7,10 +7,10 @@ const cssShorthand = require('gulp-shorthand');
 const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('copy', function () {
-  gulp.src('./src/video/background.mp4')
+  gulp.src('./src/video/*.mp4')
     .pipe(gulp.dest('./dist/video'));
 
-  gulp.src('./src/video/background.webm')
+  gulp.src('./src/video/*.webm')
     .pipe(gulp.dest('./dist/video'));
 
   gulp.src('./src/favicon.ico')

@@ -17,14 +17,44 @@
     <title>Andrew Mikhailov | JavaScript Developer</title>
 </head>
 <body>
+<script type="text/javascript">
+    const backgrounds = [
+        'background_01',
+        'background_02',
+        'background_03',
+        'background_04',
+        'background_05',
+        'background_06'
+    ];
+
+    const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+    window.onload = function () {
+      const sourceMp4 = document.createElement('source');
+      sourceMp4.type = 'video/mp4';
+      sourceMp4.src = './video/'+randomBackground+'.mp4';
+      const sourceWebm = document.createElement('source');
+
+      sourceWebm.type = 'video/webm';
+      sourceWebm.src = './video/'+randomBackground+'.webm';
+      const image = new Image();
+
+      image.src = './img/'+randomBackground+'.jpg';
+      image.alt = randomBackground;
+
+      const video = document.createElement('video');
+      video.loop = true;
+      video.autoplay = 'autoplay';
+      video.muted = 'muted';
+      video.poster = './img/'+randomBackground+'.jpg';
+      video.appendChild(sourceMp4);
+      video.appendChild(sourceWebm);
+      video.appendChild(image);
+      document.getElementById('trailer').appendChild(video);
+    }
+</script>
 <div class="container">
-    <section id="trailer" class="is_overlay">
-        <video loop="" autoplay="autoplay" muted="muted" poster="./img/background.jpg">
-            <source type="video/mp4" src="./video/background.mp4">
-            <source type="video/webm" src="./video/background.webm">
-            <img src="./img/background.jpg" alt="AJANI GOLDMANE">
-        </video>
-    </section>
+    <section id="trailer" class="is_overlay"></section>
     <div class='stars'></div>
     <div class='stars2'></div>
     <div class='stars3'></div>
@@ -67,28 +97,18 @@
     </section>
 </div>
 <script type="text/javascript">
-  window.onload = function () {
-    var element = document.getElementsByClassName('splash-screen');
-    if (element.length && element[0]) {
-      element = element[0];
-      var classString = element.className;
-      element.className = classString + " hide";
-    }
-  }
-</script>
-<script type="text/javascript">
   if ('serviceWorker' in navigator) {
-      var reg = navigator.serviceWorker.register('./sw.js');
-      reg.then(function () {
-        reg = navigator.serviceWorker.ready;
-        reg.then(function (reg) {
-          reg.sync.register('syncdata');
-        }).catch(function (err) {
-          console.log(err);
-        });
+    var reg = navigator.serviceWorker.register('./sw.js');
+    reg.then(function () {
+      reg = navigator.serviceWorker.ready;
+      reg.then(function (reg) {
+        reg.sync.register('syncdata');
       }).catch(function (err) {
         console.log(err);
       });
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 </script>
 <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>

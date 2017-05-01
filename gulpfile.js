@@ -48,7 +48,7 @@ gulp.task('image', function () {
       svgo: true,
       concurrent: 10
     }))
-    .pipe(gulp.dest('./dist/img '));
+    .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('cssShort', function() {

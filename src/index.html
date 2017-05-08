@@ -19,7 +19,7 @@
     <title>Andrew Mikhailov | JavaScript Developer</title>
 </head>
 <body>
-<script type="text/javascript">
+<script async type="text/javascript">
     const backgrounds = [
         'background_01',
         'background_02',
@@ -101,9 +101,9 @@
         </div>
     </section>
 </div>
-<script type="text/javascript">
+<script async type="text/javascript">
   if ('serviceWorker' in navigator) {
-    var reg = navigator.serviceWorker.register('./sw.js');
+    let reg = navigator.serviceWorker.register('./sw.js');
     reg.then(function () {
       reg = navigator.serviceWorker.ready;
       reg.then(function (reg) {

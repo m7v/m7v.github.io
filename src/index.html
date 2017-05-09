@@ -103,7 +103,7 @@
 </div>
 <script async type="text/javascript">
   if ('serviceWorker' in navigator) {
-    let reg = navigator.serviceWorker.register('./sw.js');
+    let reg = navigator.serviceWorker.register('./sw.js', {scope: '/homepage/'});
     reg.then(function () {
       reg = navigator.serviceWorker.ready;
       reg.then(function (reg) {

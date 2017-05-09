@@ -1,4 +1,4 @@
-const VERSION = 1.6;
+const VERSION = 1.5;
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -6,7 +6,6 @@ self.addEventListener('install', (event) => {
             .open('static-assets-' + VERSION)
             .then((cache) => {
                 return cache.addAll([
-                    '/index.html',
                     '/img/sprite.png',
                     '/css/main.css',
                     '/fonts/Beleren2016-Bold.woff',

@@ -5,10 +5,10 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="icon" sizes="192x192" href="pwa_icon.png">
     <meta name="theme-color" content="#222222">
-    <meta property="og:title" content="Andrew Mikhailov | JavaScript Developer">
+    <meta property="og:title" content="Andrew Mikhailov | JavaScript Wizard">
     <meta property="og:type" content="website">
     <meta property="og:image" content="//redkin.pro/assets/images/logos/js.jpg">
-    <meta name="twitter:title" content="Andrew Mikhailov | JavaScript Developer">
+    <meta name="twitter:title" content="Andrew Mikhailov | JavaScript Wizard">
     <meta name="twitter:description" content="JavaScript Developer at @2gis">
     <meta name="twitter:image" content="//redkin.pro/assets/images/logos/js.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
     <meta name="twitter:creator" content="@mikhailovcom">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Mikhailov | JavaScript Developer</title>
+    <title>Andrew Mikhailov | JavaScript Wizard</title>
 </head>
 <body>
 <div class="container">
@@ -63,6 +63,7 @@
     </section>
 </div>
 <script async type="text/javascript">
+    const backgroundIndex = localStorage.getItem('backgroundIndex') || 0;
     const backgrounds = [
         'background_01',
         'background_02',
@@ -72,10 +73,13 @@
         'background_06',
         'background_07',
         'background_08',
-        'background_09'
+        'background_09',
+        'background_10',
+        'background_11',
+        'background_12'
     ];
 
-    const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    const randomBackground = backgrounds[backgroundIndex];
 
     window.onload = function () {
         const sourceMp4 = document.createElement('source');
@@ -99,6 +103,12 @@
         video.appendChild(sourceWebm);
         video.appendChild(image);
         document.getElementById('trailer').appendChild(video);
+
+        let newBackgroundIndex = Number(backgroundIndex)+1;
+        if (newBackgroundIndex+1 > backgrounds.length) {
+            newBackgroundIndex = 0;
+        }
+        localStorage.setItem('backgroundIndex', newBackgroundIndex);
     };
 </script>
 <script async type="text/javascript">

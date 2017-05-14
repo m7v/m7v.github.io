@@ -1,4 +1,4 @@
-const VERSION = 1.7;
+const VERSION = 1.9;
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -18,6 +18,9 @@ self.addEventListener('install', (event) => {
                     '/img/background_07.jpg',
                     '/img/background_08.jpg',
                     '/img/background_09.jpg',
+                    '/img/background_10.jpg',
+                    '/img/background_11.jpg',
+                    '/img/background_12.jpg',
                     '/video/background_01.mp4',
                     '/video/background_02.mp4',
                     '/video/background_03.mp4',
@@ -27,6 +30,9 @@ self.addEventListener('install', (event) => {
                     '/video/background_07.mp4',
                     '/video/background_08.mp4',
                     '/video/background_09.mp4',
+                    '/video/background_10.mp4',
+                    '/video/background_11.mp4',
+                    '/video/background_12.mp4',
                     '/video/background_01.webm',
                     '/video/background_02.webm',
                     '/video/background_03.webm',
@@ -35,7 +41,10 @@ self.addEventListener('install', (event) => {
                     '/video/background_06.webm',
                     '/video/background_07.webm',
                     '/video/background_08.webm',
-                    '/video/background_09.webm'
+                    '/video/background_09.webm',
+                    '/video/background_10.webm',
+                    '/video/background_11.webm',
+                    '/video/background_12.webm'
                 ]);
             }).then(() => {
             return self.skipWaiting();

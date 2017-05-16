@@ -53,9 +53,6 @@ gulp.task('image', function () {
 
 gulp.task('cssShort', function() {
   return gulp.src('./src/css/main.css')
-    .pipe(uncss({
-      html: ['./src/index.html']
-    }))
     .pipe(cssShorthand())
     .pipe(cssMinify())
     .pipe(gulp.dest('./dist/css'));

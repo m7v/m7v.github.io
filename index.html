@@ -63,7 +63,10 @@
     </section>
 </div>
 <script async type="text/javascript">
-    const backgroundIndex = localStorage.getItem('backgroundIndex') || 0;
+    const backgroundIndex = String((new Date).getSeconds())
+        .split('')
+        .reduce((pool, value) => Number(pool) + Number(value), 0);
+
     const backgrounds = [
         'background_01',
         'background_02',
@@ -81,7 +84,7 @@
         'background_14'
     ];
 
-    const randomBackground = backgrounds[backgroundIndex];
+    const randomBackground = backgrounds[backgroundIndex] || backgrounds[backgrounds.length - 1];
 
     window.onload = function () {
         const sourceMp4 = document.createElement('source');
@@ -105,12 +108,6 @@
         video.appendChild(sourceWebm);
         video.appendChild(image);
         document.getElementById('trailer').appendChild(video);
-
-        let newBackgroundIndex = Number(backgroundIndex)+1;
-        if (newBackgroundIndex+1 > backgrounds.length) {
-            newBackgroundIndex = 0;
-        }
-        localStorage.setItem('backgroundIndex', newBackgroundIndex);
     };
 </script>
 <script async type="text/javascript">

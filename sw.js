@@ -23,6 +23,7 @@ self.addEventListener('install', (event) => {
                     '/img/background_12.jpg',
                     '/img/background_13.jpg',
                     '/img/background_14.jpg',
+                    '/img/background_15.jpg',
                     '/video/background_01.mp4',
                     '/video/background_02.mp4',
                     '/video/background_03.mp4',
@@ -37,6 +38,7 @@ self.addEventListener('install', (event) => {
                     '/video/background_12.mp4',
                     '/video/background_13.mp4',
                     '/video/background_14.mp4',
+                    '/video/background_15.mp4',
                     '/video/background_01.webm',
                     '/video/background_02.webm',
                     '/video/background_03.webm',
@@ -50,7 +52,8 @@ self.addEventListener('install', (event) => {
                     '/video/background_11.webm',
                     '/video/background_12.webm',
                     '/video/background_13.webm',
-                    '/video/background_14.webm'
+                    '/video/background_14.webm',
+                    '/video/background_15.webm',
                 ]);
             }).then(() => {
             return self.skipWaiting();

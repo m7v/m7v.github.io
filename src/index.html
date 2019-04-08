@@ -91,12 +91,8 @@
         const sourceMp4 = document.createElement('source');
         sourceMp4.type = 'video/mp4';
         sourceMp4.src = './video/' + randomBackground + '.mp4';
-        const sourceWebm = document.createElement('source');
 
-        sourceWebm.type = 'video/webm';
-        sourceWebm.src = './video/' + randomBackground + '.webm';
         const image = new Image();
-
         image.src = './img/' + randomBackground + '.jpg';
         image.alt = randomBackground;
 
@@ -106,7 +102,6 @@
         video.muted = 'muted';
         video.poster = './img/' + randomBackground + '.jpg';
         video.appendChild(sourceMp4);
-        video.appendChild(sourceWebm);
         video.appendChild(image);
         document.getElementById('trailer').appendChild(video);
     };

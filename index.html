@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="icon" sizes="192x192" href="pwa_icon.png">
+    <meta name="theme-color" content="#222222">
+    <meta property="og:title" content="Andrew Mikhailov | JavaScript Wizard">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="//redkin.pro/assets/images/logos/js.jpg">
+    <meta name="twitter:title" content="Andrew Mikhailov | JavaScript Wizard">
+    <meta name="twitter:description" content="JavaScript Developer at @2gis">
+    <meta name="twitter:image" content="//redkin.pro/assets/images/logos/js.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@andrew-mikhailov.github.io">
+    <meta name="twitter:creator" content="@mikhailovcom">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Mikhailov | JavaScript Wizard</title>
+</head>
+<body>
+<div class="container">
+    <section id="trailer" class="is_overlay"></section>
+    <div class='stars'></div>
+    <div class='stars2'></div>
+    <div class='stars3'></div>
+    <section class="bio">
+        <div class='title'>
+            <div class="name">
+                <a href="mailto:andrew.mikhailov.18.01@gmail.com">
+                    <span class="big-letter big-mobile-letter">A</span>NDRE<span class="big-mobile-letter">W</span>
+                    <span class="big-mobile-letter">M</span>IKHAILO<span class="big-letter big-mobile-letter">V</span>
+                </a>
+            </div>
+            <div class="profession"><span>JavaScript Developer</span></div>
+            <footer>
+                <a class="ico ico_github"
+                   href="https://github.com/m7v"
+                   title="Github"
+                   target="_blank"></a>
+
+                <a class="ico ico_linkedin"
+                   href="https://www.linkedin.com/in/andrew-mikhailov-219b52a6/"
+                   title="LinkedIn"
+                   target="_blank"></a>
+
+                <a class="ico ico_vk"
+                   href="https://vk.com/mikhailovcom"
+                   title="VKontakte"
+                   target="_blank"></a>
+
+                <a class="ico ico_twitter"
+                   href="https://twitter.com/mikhailovcom"
+                   title="Twitter"
+                   target="_blank"></a>
+
+                <a class="ico ico_instagram"
+                   href="https://www.instagram.com/andrew_mikhailov"
+                   title="Instagram"
+                   target="_blank"></a>
+            </footer>
+        </div>
+    </section>
+</div>
+<script async type="text/javascript">
+    const backgroundIndex = String((new Date).getSeconds())
+        .split('')
+        .reduce((pool, value) => Number(pool) + Number(value), 0);
+
+    const backgrounds = [
+        'background_01',
+        'background_02',
+        'background_03',
+        'background_04',
+        'background_05',
+        'background_06',
+        'background_07',
+        'background_08',
+        'background_09',
+        'background_10',
+        'background_11',
+        'background_12',
+        'background_13',
+        'background_14',
+        'background_15',
+    ];
+
+    const randomBackground = backgrounds[backgroundIndex] || backgrounds[backgrounds.length - 1];
+
+    window.onload = function () {
+        const sourceMp4 = document.createElement('source');
+        sourceMp4.type = 'video/mp4';
+        sourceMp4.src = './video/' + randomBackground + '.mp4';
+
+        const image = new Image();
+        image.src = './img/' + randomBackground + '.jpg';
+        image.alt = randomBackground;
+
+        const video = document.createElement('video');
+        video.loop = true;
+        video.autoplay = 'autoplay';
+        video.muted = 'muted';
+        video.poster = './img/' + randomBackground + '.jpg';
+        video.appendChild(sourceMp4);
+        video.appendChild(image);
+        document.getElementById('trailer').appendChild(video);
+    };
+</script>
+<script async type="text/javascript">
+    if ('serviceWorker' in navigator) {
+        let reg = navigator.serviceWorker.register('./sw.js');
+        reg.then(function () {
+            reg = navigator.serviceWorker.ready;
+            reg.then(function (reg) {
+                reg.sync.register('syncdata');
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }).catch(function (err) {
+            console.log(err);
+        });
+    }
+</script>
+<link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</body>
+</html>
